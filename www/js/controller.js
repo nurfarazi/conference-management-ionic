@@ -8,6 +8,9 @@ app.controller('SignInCtrl', function ($scope, $state, $http, $window) {
     $scope.signIn = function () {
         $state.go('home');
     }
+    $scope.registrationclick = function () {
+        $state.go('register');
+    }
 
     console.log('signin');
 });
@@ -42,5 +45,19 @@ app.controller('showqrCtrl', function ($scope, $state, $http, $window, $cordovaB
 
 
     console.log('qr');
+
+});
+
+
+app.controller('registerCtrl', function ($scope, $state, $http, $window) {
+
+    $scope.signinpage = function () {
+
+        $state.go('signin');
+
+    }
+
+
+    console.log('register');
 
 });

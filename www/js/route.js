@@ -18,6 +18,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/showqr.html',
             controller: 'showqrCtrl'
         })
+        .state('register', {
+            url: '/register',
+            templateUrl: 'templates/register.html',
+            controller: 'registerCtrl'
+        })
 
     $urlRouterProvider.otherwise('/sign-in');
 
