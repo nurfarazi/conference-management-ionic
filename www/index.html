@@ -48,7 +48,7 @@
 
                 </div>
                 <div class="padding text-center">
-                    <button class="button button-royal ion-log-in" ng-click="signIn(user)">
+                    <button class="button button-royal ion-log-in" ng-click="signIn()">
                         Sign-In
                     </button>
                     <p class="text-center padding">
@@ -68,34 +68,35 @@
 
     <!--    -->
     <script id="templates/home.html" type="text/ng-template">
-        <ion-view view-title="Sign-In">
+        <ion-view view-title="home">
+
             <ion-content>
-                <div class="list">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Email</span>
-                        <input type="text" placeholder="John">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Password</span>
-                        <input type="text" placeholder="Suhr">
-                    </label>
 
-                </div>
-                <div class="padding text-center">
-                    <button class="button button-royal ion-log-in" ng-click="signIn(user)">
-                        Sign-In
-                    </button>
-                    <p class="text-center padding">
-                        <a href="#/registration" class="button button-stable">Registration</a>
-                    </p>
+                <div class="list card">
 
-                    <p class="text-center">
-                        <a href="#/forgot-password">Forgot password</a>
-                    </p>
+                    <a href="#" class="item item-icon-left">
+                        <i class="icon ion-home"></i> Scan Code
+                    </a>
+
+                    <a href="#" class="item item-icon-left">
+                        <i class="icon ion-ios-telephone"></i> Show QR
+                    </a>
+
 
 
                 </div>
             </ion-content>
+
+
+            <div class="tabs tabs-icon-top">
+                <a class="tab-item">
+                    <i class="icon ion-home"></i> Home
+                </a>
+
+                <a class="tab-item">
+                    <i class="icon ion-gear-a"></i> Log Out
+                </a>
+            </div>
         </ion-view>
     </script>
 
