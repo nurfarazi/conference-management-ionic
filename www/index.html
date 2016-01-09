@@ -114,13 +114,18 @@
     <script id="templates/showqr.html" type="text/ng-template">
         <ion-view view-title="showqrCtrl">
 
-            <ion-content>
+            <ion-content id="qrcodeshow">
 
-                <qr type-number="8" correction-level="'M'" size="200" input-mode="'ALPHA_NUM'" text="string" image="true"></qr>
+
+
+                <qr type-number="8" correction-level="'M'" size='300' input-mode="ALPHA_NUM" text="string" image="true"></qr>
 
             </ion-content>
 
-            <qr text="string"></qr>
+
+
+
+
             <div class="tabs tabs-icon-top">
                 <a class="tab-item">
                     <i class="icon ion-home"></i> Home
