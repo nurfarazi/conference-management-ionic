@@ -36,6 +36,8 @@ app.controller('homeCtrl', function ($scope, $state, $http, $window, $cordovaBar
 });
 
 app.controller('showqrCtrl', function ($scope, $state, $http, $window, $cordovaBarcodeScanner) {
+    $scope.string = 'YOUR TEXT TO ENCODE';
+
 
 
 

@@ -18,7 +18,14 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-    <script type="text/javascript" src="lib/qrcode.js/lib/qrcode.js"></script>
+
+
+    <script type="text/javascript" src="lib/qrcode.js/lib/qrcode.min.js"></script>
+    <script type="text/javascript" src="lib/angular-qr/angular-qr.min.js"></script>
+
+
+
+    <script src="lib/qr-js/qr.min.js"></script>
 
     <script src="cordova.js"></script>
     <!-- your app's js -->
@@ -109,10 +116,11 @@
 
             <ion-content>
 
+                <qr type-number="8" correction-level="'M'" size="200" input-mode="'ALPHA_NUM'" text="string" image="true"></qr>
 
             </ion-content>
 
-
+            <qr text="string"></qr>
             <div class="tabs tabs-icon-top">
                 <a class="tab-item">
                     <i class="icon ion-home"></i> Home
