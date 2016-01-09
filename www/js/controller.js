@@ -11,11 +11,34 @@ app.controller('SignInCtrl', function ($scope, $state, $http, $window) {
 
     console.log('signin');
 });
-app.controller('homeCtrl', function ($scope, $state, $http, $window) {
+app.controller('homeCtrl', function ($scope, $state, $http, $window, $cordovaBarcodeScanner) {
 
 
+    $scope.scancode = function () {
 
+        $cordovaBarcodeScanner.scan().then(function (imageData) {
+            alert(imageData.text);
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function (error) {
+            console.log("An error happened -> " + error);
+        });
+
+    }
+    $scope.showqr = function () {
+
+        $state.go('showqr');
+
+    }
 
     console.log('home');
+
+});
+
+app.controller('showqrCtrl', function ($scope, $state, $http, $window, $cordovaBarcodeScanner) {
+
+
+
+    console.log('showqr');
 
 });
