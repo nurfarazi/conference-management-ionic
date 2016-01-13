@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <widget id="com.nurfarazi.conference" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-        <name>Conference MGM</name>
+        <name>ConferenceMGM</name>
         <description>
-            nur farazi
+            nurfarazi
         </description>
         <author email="nur369188@gmail.com" href="http://example.com.com/">
-            nur farazi
+            nurfarazi
         </author>
         <content src="index.html" />
         <access origin="*" />

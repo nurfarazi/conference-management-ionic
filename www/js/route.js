@@ -24,6 +24,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'registerCtrl'
         })
 
+
     $urlRouterProvider.otherwise('/sign-in');
 
 });

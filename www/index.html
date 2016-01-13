@@ -22,7 +22,7 @@
 
     <script type="text/javascript" src="lib/qrcode.js/lib/qrcode.min.js"></script>
     <script type="text/javascript" src="lib/angular-qr/angular-qr.min.js"></script>
-
+    <script src="lib/angular-resource/angular-resource.js"></script>
 
 
     <script src="lib/qr-js/qr.min.js"></script>
@@ -30,6 +30,7 @@
     <script src="cordova.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/service.js"></script>
     <script src="js/route.js"></script>
     <script src="js/controller.js"></script>
 
@@ -46,24 +47,28 @@
     <script id="templates/sign-in.html" type="text/ng-template">
         <ion-view view-title="Sign-In">
             <ion-content>
-                <div class="list">
+
+
+                <div class="list padding">
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">Email</span>
-                        <input type="text" placeholder="John">
+                        <input type="text" placeholder="john@gmail.com" ng-model="user.email">
                     </label>
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">Password</span>
-                        <input type="text" placeholder="Suhr">
+                        <input type="text" placeholder="Suhr" ng-model="user.password">
                     </label>
 
                 </div>
                 <div class="padding text-center">
-                    <button class="button button-royal ion-log-in" ng-click="signIn()">
+                    <button class="button button-royal ion-log-in" ng-click="signIn(user)">
                         Sign-In
                     </button>
                     <p class="text-center padding">
                         <a class="button button-stable" ng-click="registrationclick()">Registration</a>
                     </p>
+
+
 
                 </div>
             </ion-content>
@@ -78,13 +83,19 @@
             <ion-content>
 
                 <div class="list card">
+                    <a href="#" class="item item-icon-left" ng-click="scancode()">
+                        <i class="icon ion-home"></i> Events
+                    </a>
 
                     <a href="#" class="item item-icon-left" ng-click="scancode()">
                         <i class="icon ion-home"></i> Scan Code
                     </a>
 
                     <a href="#" class="item item-icon-left" ng-click="showqr()">
-                        <i class="icon ion-ios-telephone"></i> Show QR
+                        <i class="icon ion-ios-telephone"></i> Show ID
+                    </a>
+                    <a href="#" class="item item-icon-left" ng-click="showqr()">
+                        <i class="icon ion-ios-telephone"></i> Schedule
                     </a>
 
                 </div>
@@ -97,7 +108,7 @@
                 </a>
 
                 <a class="tab-item">
-                    <i class="icon ion-gear-a"></i> Log Out
+                    <i class="icon ion-gear-a" ng-click="logout()"></i> Log Out
                 </a>
             </div>
         </ion-view>
@@ -116,6 +127,8 @@
                 <qr type-number="8" correction-level="'M'" size='300' input-mode="ALPHA_NUM" text="string" image="true"></qr>
 
             </ion-content>
+
+
 
 
 
@@ -142,37 +155,38 @@
                 <div class="list ">
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">First Name</span>
-                        <input type="text" placeholder="nur farazi">
+                        <input type="text" placeholder="nur farazi" ng-model="user.name">
                     </label>
 
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">Email</span>
-                        <input type="text" placeholder="name@gmail.com">
+                        <input type="text" placeholder="name@gmail.com" ng-model="user.email">
                     </label>
 
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">Phone</span>
-                        <input type="number" placeholder="01717369188">
+                        <input type="text" placeholder="01717369188" ng-model="user.phone">
                     </label>
 
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">password</span>
-                        <input type="password" placeholder="password">
+                        <input type="text" placeholder="password" ng-model="user.password">
                     </label>
 
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">Company</span>
-                        <input type="text" placeholder="xyz">
+                        <input type="text" placeholder="xyz" ng-model="user.companyname">
                     </label>
                 </div>
 
 
-                <button class="button button-royal button-block">
+                <button class="button button-royal button-block" ng-click="registerbtn(user)">
                     Register
                 </button>
                 <button class="button button-royal button-block" ng-click="signinpage()">
                     Login
                 </button>
+
             </ion-content>
 
 
